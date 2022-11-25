@@ -16,6 +16,7 @@ class CreateUserAccessesTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('nama')->nullable();
+            $table->string('email')->nullable();
             $table->string('password')->nullable();
             $table->string('access_role');
             });

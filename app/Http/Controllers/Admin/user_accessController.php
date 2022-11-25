@@ -22,6 +22,7 @@ class user_accessController extends Controller
 
         if (!empty($keyword)) {
             $user_access = user_access::where('nama', 'LIKE', "%$keyword%")
+                ->orWhere('email', 'LIKE', "%$keyword%")
                 ->orWhere('password', 'LIKE', "%$keyword%")
                 ->orWhere('access_role', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);

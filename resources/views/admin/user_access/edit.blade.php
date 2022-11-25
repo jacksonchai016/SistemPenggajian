@@ -7,7 +7,7 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Edit user_access #{{ $user_access->id }}</div>
+                    <div class="card-header">Edit User Access #{{ $user_access->id }}</div>
                     <div class="card-body">
                         <a href="{{ url('/admin/user_access') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />

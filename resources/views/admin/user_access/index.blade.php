@@ -7,7 +7,7 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">User_access</div>
+                    <div class="card-header">User Access</div>
                     <div class="card-body">
                         <a href="{{ url('/admin/user_access/create') }}" class="btn btn-success btn-sm" title="Add New user_access">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
@@ -30,14 +30,15 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Nama</th><th>Password</th><th>Access Role</th><th>Actions</th>
+                                        <th>#</th><th>Nama</th><th>Email</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                            
                                 @foreach($user_access as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->nama }}</td><td>{{ $item->password }}</td><td>{{ $item->access_role }}</td>
+                                        <td>{{ $item->nama }}</td><td>{{ $item->email }}</td>
                                         <td>
                                             <a href="{{ url('/admin/user_access/' . $item->id) }}" title="View user_access"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/admin/user_access/' . $item->id . '/edit') }}" title="Edit user_access"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

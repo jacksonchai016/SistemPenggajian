@@ -25,7 +25,7 @@ class user_access extends Model
      *
      * @var array
      */
-    protected $fillable = ['nama', 'password', 'access_role'];
+    protected $fillable = ['nama', 'email', 'password', 'access_role'];
 
     
 }

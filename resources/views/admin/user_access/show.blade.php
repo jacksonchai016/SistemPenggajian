@@ -7,7 +7,7 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">user_access {{ $user_access->id }}</div>
+                    <div class="card-header">User Access {{ $user_access->id }}</div>
                     <div class="card-body">
 
                         <a href="{{ url('/admin/user_access') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
@@ -27,7 +27,17 @@
                                     <tr>
                                         <th>ID</th><td>{{ $user_access->id }}</td>
                                     </tr>
-                                    <tr><th> Nama </th><td> {{ $user_access->nama }} </td></tr><tr><th> Password </th><td> {{ $user_access->password }} </td></tr><tr><th> Access Role </th><td> {{ $user_access->access_role }} </td></tr>
+                                    <tr><th> Nama </th><td> {{ $user_access->nama }} </td></tr><tr><th> Email </th><td> {{ $user_access->email }} </td></tr>
+                                    <tr>
+                                        <th> Access </th>
+                                        <td> 
+                                    <?php 
+                                    $access_keyword = $user_access->access_role;
+                                    $json_data = json_decode('{"hr": "HR", "bpjs": "BPJS", "payroll": "Payroll"}' ,true);
+                                    echo $json_data[$access_keyword];
+                                    ?>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
