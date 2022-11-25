@@ -29,3 +29,5 @@ Route::get('/', function () {
 //     return view('about');
 // });
 
+
+Route::resource('admin/user_access', 'App\Http\Controllers\Admin\user_accessController');
