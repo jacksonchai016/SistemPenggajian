@@ -19,16 +19,16 @@
                 <a class="nav-link active" aria-current="page" href="{{url('/')}}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{url('/about')}}">About</a>
+                <a class="nav-link" href="{{url('/admin/employee')}}">Employee</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{url('/sistem')}}">Sistem Penggajian</a>
+                <a class="nav-link" href="{{url('/admin/contract')}}">Contract</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{url('/attendance')}}">Attendance</a>
+                <a class="nav-link" href="{{url('/admin/attendance')}}">Attendance</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{url('/kontrak')}}">Kontrak</a>
+                <a class="nav-link" href="{{url('/admin/user_access')}}">User</a>
               </li>
               
             </ul>
