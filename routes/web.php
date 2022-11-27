@@ -16,18 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
-// Route::get('/', function () {
-//     return view('sistem_penggajian');
-// });
-// Route::get('/', function () {
-//     return view('kontrak');
-// });
-// Route::get('/', function () {
-//     return view('attendance');
-// });
-// Route::get('/', function () {
-//     return view('about');
-// });
 
 Route::resource('admin/user_access', 'App\Http\Controllers\Admin\user_accessController');
 Route::resource('admin/employee', 'App\Http\Controllers\Admin\employeeController');
