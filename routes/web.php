@@ -13,20 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/sistem', function () {
-    return view('sistem_penggajian');
-});
-Route::get('/kontrak', function () {
-    return view('kontrak');
-});
-Route::get('/attendance', function () {
-    return view('attendance');
-});
+// Route::get('/', function () {
+//     return view('layouts.main');
+// });
 
 Route::resource('admin/user_access', 'App\Http\Controllers\Admin\user_accessController');
+Route::resource('admin/employee', 'App\Http\Controllers\Admin\employeeController');
+Route::resource('admin/contract', 'App\Http\Controllers\Admin\contractController');
+Route::resource('admin/attendance', 'App\Http\Controllers\Admin\attendanceController');
+Route::resource('admin/bpjs_data', 'App\Http\Controllers\Admin\bpjs_dataController');
+Route::resource('admin/payslip', 'App\Http\Controllers\Admin\payslipController');
