@@ -9,7 +9,7 @@
     </li>
     <li class="nav-item">
         <a href="/admin/attendance" class="nav-link">
-            <i class="nav-icon fas fa-user-alt"></i>
+            <i class="nav-icon fas fa-user-edit"></i>
             <p>
             Attendance
             </p>
@@ -17,7 +17,7 @@
     </li>
     <li class="nav-item">
         <a href="/admin/bpjs_data" class="nav-link">
-            <i class="nav-icon fas fa-user-alt"></i>
+            <i class="nav-icon far fa-id-card"></i>
             <p>
             BPJS Karyawan
             </p>
@@ -25,7 +25,7 @@
     </li>
     <li class="nav-item">
         <a href="/admin/employee" class="nav-link">
-            <i class="nav-icon fas fa-user-alt"></i>
+            <i class="nav-icon fas fa-user-tie"></i>
             <p>
             Employee
             </p>
@@ -33,7 +33,7 @@
     </li>
     <li class="nav-item">
         <a href="/admin/contract" class="nav-link">
-            <i class="nav-icon fas fa-user-alt"></i>
+            <i class="nav-icon fas fa-user-plus"></i>
             <p>
             Contract
             </p>
@@ -41,7 +41,7 @@
     </li>
     <li class="nav-item">
         <a href="/admin/payslip" class="nav-link">
-            <i class="nav-icon fas fa-user-alt"></i>
+            <i class="nav-icon fas fa-hand-holding-usd"></i>
             <p>
             Payslip
             </p>

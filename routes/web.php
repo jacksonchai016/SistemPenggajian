@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('layouts.main');
-// });
+Route::get('/contact', function () {
+    return view('contact');
+});
 
 Route::resource('admin/user_access', 'App\Http\Controllers\Admin\user_accessController');
 Route::resource('admin/employee', 'App\Http\Controllers\Admin\employeeController');
