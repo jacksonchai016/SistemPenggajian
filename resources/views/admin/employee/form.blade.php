@@ -1,7 +1,8 @@
 <?php
     use App\Models\Contract;
     $Contracts = contract::get()->where('active', '=', 1);
-    $json_data = array(); 
+    $json_data = array();
+     
     foreach ($Contracts as $Contract) {
         $json_data[$Contract->id] = $Contract->contract_name;
     }
