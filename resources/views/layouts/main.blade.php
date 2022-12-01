@@ -1,3 +1,14 @@
+<?php
+
+  use App\Models\User;
+
+  $session = session()->get('user');
+  
+  if ($session == ''){
+    header('Location: /login');
+    exit();
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -248,6 +259,7 @@
               </div><!-- /.card-header -->
               <div class="card-body">
                 @yield('container')
+                
               </div><!-- /.card-body -->
             </div>
             <!-- /.card -->
