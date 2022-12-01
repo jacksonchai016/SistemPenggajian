@@ -1,3 +1,19 @@
+<?php
+
+    use App\Models\bpjs_datum as bpjs;
+
+    $BPJS = bpjs::get()->where("active",'=',1);
+
+    $bpjs_data = array();
+
+    foreach ($BPJS as $bpjs) {
+        $bpjs_data[$bpjs->id] = $bpjs->nama;
+    }
+
+    $bpjs_json = json_encode($bpjs_data);
+
+?>
+
 <div class="form-group {{ $errors->has('contract_name') ? 'has-error' : ''}}">
     <label for="contract_name" class="control-label">{{ 'Contract Name *' }}</label>
     <input required class="form-control" name="contract_name" type="text" id="contract_name" value="{{ isset($contract->contract_name) ? $contract->contract_name : ''}}" >
@@ -52,6 +68,15 @@
     {!! $errors->first('work_day', '<p class="help-block">:message</p>') !!}
 </div>
     {!! $errors->first('active', '<p class="help-block">:message</p>') !!}
+</div>
+
+<div class="form-group {{ $errors->has('bpjs_category_id') ? 'has-error' : ''}}">
+    <label for="bpjs_category_id" class="control-label">{{ 'BPJS Category' }}</label>
+    <select required name="bpjs_category_id" class="form-control" id="bpjs_category_id" >
+    @foreach (json_decode($bpjs_json, true) as $optionKey => $optionValue)
+        <option value="{{ $optionKey }}" {{ (isset($contract->bpjs_category_id) && $contract->bpjs_category_id == $optionKey) ? 'selected' : ''}}>{{ $optionValue }}</option>
+        @endforeach
+    </select>
 </div>
 
 

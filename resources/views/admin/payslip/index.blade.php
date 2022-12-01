@@ -1,3 +1,17 @@
+<?php
+    use App\Models\Employee;
+
+    $employees = Employee::all();
+
+    $employee_data = array();
+
+    foreach ($employees as $employee) {
+        $employee_data[$employee->id] = $employee->name;
+    }
+
+    $employee_data = array('' => 'Select Employee') + $employee_data;
+?>
+
 @extends('layouts.main')
 
 @section('container')
@@ -30,14 +44,22 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Employee Id</th><th>Contract Id</th><th>Currency</th><th>Actions</th>
+                                        <th>#</th>
+                                        <th>Employee</th>
+                                        <th>Date Start</th>
+                                        <th>Date End</th>
+                                        <th>Total</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($payslip as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->employee_id }}</td><td>{{ $item->contract_id }}</td><td>{{ $item->currency }}</td>
+                                        <td>{{ $employee_data[$item->employee_id] }}</td>
+                                        <td>{{ $item->start_date }}</td>
+                                        <td>{{ $item->end_date }}</td>
+                                        <td>{{$item->currency}} {{ $item->payslip_amount }}</td>
                                         <td>
                                             <a href="{{ url('/admin/payslip/' . $item->id) }}" title="View payslip"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/admin/payslip/' . $item->id . '/edit') }}" title="Edit payslip"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

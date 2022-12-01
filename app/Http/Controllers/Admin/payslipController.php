@@ -124,4 +124,19 @@ class payslipController extends Controller
 
         return redirect('admin/payslip')->with('flash_message', 'payslip deleted!');
     }
+
+    /**
+     * Compute the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param  int  $id
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public static function compute($request)
+    {
+        $view = payslip::onchangeEmployee($request);
+
+        return $view;
+    }
 }

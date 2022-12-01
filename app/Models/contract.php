@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Models;
-
 use Illuminate\Database\Eloquent\Model;
 
-class contract extends Model
+class contract extends Model 
 {
     /**
      * The database table used by the model.
@@ -25,7 +24,6 @@ class contract extends Model
      *
      * @var array
      */
-    protected $fillable = ['contract_name', 'currency', 'date_start', 'date_end', 'wages', 'pph21', 'food', 'transport', 'active', 'work_day'];
+    protected $fillable = ['contract_name', 'currency', 'date_start', 'date_end', 'wages', 'pph21', 'food', 'transport', 'active', 'work_day', 'bpjs_category_id'];
 
-    
 }
