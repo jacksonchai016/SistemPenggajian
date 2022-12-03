@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests;
 
-use App\Models\user_access;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class user_accessController extends Controller
+class userController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,16 +20,20 @@ class user_accessController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $user_access = user_access::where('nama', 'LIKE', "%$keyword%")
+            $user = User::where('name', 'LIKE', "%$keyword%")
                 ->orWhere('email', 'LIKE', "%$keyword%")
+                ->orWhere('role', 'LIKE', "%$keyword%")
+                ->orWhere('email_verified_at', 'LIKE', "%$keyword%")
                 ->orWhere('password', 'LIKE', "%$keyword%")
-                ->orWhere('access_role', 'LIKE', "%$keyword%")
+                ->orWhere('remember_token', 'LIKE', "%$keyword%")
+                ->orWhere('create_at', 'LIKE', "%$keyword%")
+                ->orWhere('update_at', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $user_access = user_access::latest()->paginate($perPage);
+            $user = User::latest()->paginate($perPage);
         }
 
-        return view('admin.user_access.index', compact('user_access'));
+        return view('admin.user.index', compact('user'));
     }
 
     /**
@@ -40,7 +43,7 @@ class user_accessController extends Controller
      */
     public function create()
     {
-        return view('admin.user_access.create');
+        return view('admin.user.create');
     }
 
     /**
@@ -55,9 +58,9 @@ class user_accessController extends Controller
         
         $requestData = $request->all();
         
-        user_access::create($requestData);
+        User::create($requestData);
 
-        return redirect('admin/user_access')->with('flash_message', 'user_access added!');
+        return redirect('admin/user')->with('flash_message', 'user added!');
     }
 
     /**
@@ -69,9 +72,9 @@ class user_accessController extends Controller
      */
     public function show($id)
     {
-        $user_access = user_access::findOrFail($id);
+        $user = User::findOrFail($id);
 
-        return view('admin.user_access.show', compact('user_access'));
+        return view('admin.user.show', compact('user'));
     }
 
     /**
@@ -83,9 +86,9 @@ class user_accessController extends Controller
      */
     public function edit($id)
     {
-        $user_access = user_access::findOrFail($id);
+        $user = User::findOrFail($id);
 
-        return view('admin.user_access.edit', compact('user_access'));
+        return view('admin.user.edit', compact('user'));
     }
 
     /**
@@ -101,10 +104,10 @@ class user_accessController extends Controller
         
         $requestData = $request->all();
         
-        $user_access = user_access::findOrFail($id);
-        $user_access->update($requestData);
+        $user = User::findOrFail($id);
+        $user->update($requestData);
 
-        return redirect('admin/user_access')->with('flash_message', 'user_access updated!');
+        return redirect('admin/user')->with('flash_message', 'user updated!');
     }
 
     /**
@@ -116,8 +119,8 @@ class user_accessController extends Controller
      */
     public function destroy($id)
     {
-        user_access::destroy($id);
+        User::destroy($id);
 
-        return redirect('admin/user_access')->with('flash_message', 'user_access deleted!');
+        return redirect('admin/user')->with('flash_message', 'user deleted!');
     }
 }

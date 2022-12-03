@@ -19,8 +19,8 @@ class CreateEmployeesTable extends Migration
             $table->string('code')->nullable();
             $table->string('identification_no')->nullable();
             $table->text('address')->nullable();
-            $table->string('marriage_status');
-            $table->string('gender');
+            $table->string('marriage_status')->nullable();
+            $table->string('gender')->nullable();
             $table->integer('contract_id')->unsigned();
             $table->foreign('contract_id')->references('id')->on('contracts')->onDelete('restrict');
             });
