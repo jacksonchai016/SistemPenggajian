@@ -17,7 +17,7 @@
 @if($formMode == 'create')
 <div class="form-group {{ $errors->has('password') ? 'has-error' : ''}}">
     <label for="password" class="control-label">{{ 'Password' }}</label>
-    <input class="form-control" name="password" type="password" id="password" value="{{ isset($user->password) ? $user->password : ''}}" >
+    <input class="form-control" required name="password" type="password" id="password" value="{{ isset($user->password) ? $user->password : ''}}" >
     {!! $errors->first('password', '<p class="help-block">:message</p>') !!}
 </div>
 @endif
