@@ -13,8 +13,17 @@
     {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
 </div>
 
+
+@if($formMode == 'create')
+<div class="form-group {{ $errors->has('password') ? 'has-error' : ''}}">
+    <label for="password" class="control-label">{{ 'Password' }}</label>
+    <input class="form-control" required name="password" type="password" id="password" value="{{ isset($user->password) ? $user->password : ''}}" >
+    {!! $errors->first('password', '<p class="help-block">:message</p>') !!}
+</div>
+@endif
+
 <div class="form-group {{ $errors->has('role') ? 'has-error' : ''}}">
-    <label for="role" class="control-label">{{ 'Employee' }}</label>
+    <label for="role" class="control-label">{{ 'Role' }}</label>
     <select required name="role" class="form-control" id="role" >
         @foreach ($role_list as $optionKey => $optionValue)
             <option value="{{ $optionKey }}" {{ (isset($user->role) && $user->role == $optionKey) ? 'selected' : ''}}>{{ $optionValue }}</option>

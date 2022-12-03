@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Facades\Hash;
+
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -57,6 +59,7 @@ class userController extends Controller
     {
         
         $requestData = $request->all();
+        $requestData['password'] = Hash::make($requestData['password']);
         
         User::create($requestData);
 
