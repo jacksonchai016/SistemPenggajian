@@ -65,10 +65,10 @@
 
         if ($session->role == 'payroll'){
             echo $User_Menu;
-            echo $Attendance_Menu;
             echo $BPJS_Menu;
-            echo $Employee_Menu;
             echo $Contract_Menu;
+            echo $Employee_Menu;
+            echo $Attendance_Menu;
             echo $Payslip_Menu;
         }
 
