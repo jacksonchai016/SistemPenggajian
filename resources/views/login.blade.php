@@ -24,41 +24,6 @@
         }
     </style>
 </head>
-{{-- <body>
-    <form method="POST" action="{{ url('/process') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
-        {{ csrf_field() }}
-
-        <input type="email" name="email" placeholder="Email@example.com">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit" value="Login">
-        
-    </form>
-</body> --}}
-{{-- <body>
-
-<form method="POST" action="{{ url('/process') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
-    {{ csrf_field() }}
-    <!-- Email input -->
-    <div class="form-outline mb-4">
-      <input type="email" id="email" name="email" class="form-control" />
-      <label class="form-label" for="email">Email address</label>
-    </div>
-  
-    <!-- Password input -->
-    <div class="form-outline mb-4">
-      <input type="password" id="password" name="password" class="form-control" />
-      <label class="form-label" for="password">Password</label>
-    </div>
-
-    <!-- Submit button -->
-    <input type="submit" value="Log In" class="btn btn-primary btn-block mb-4"/>
-  
-    <!-- Register buttons -->
-    <div class="text-center">
-      <p>Not a member? <a href="/register">Register</a></p>
-    </div>
-  </form>
-</body> --}}
 
 <body>
     <section class="vh-100">
